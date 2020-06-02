@@ -36,8 +36,8 @@ class simulation:
                 if(i != j):
                     temp -= A[i][j] * temp_x_solution[j]
             temp_x_solution[i] = temp/A[i][i]
-        if(not(check_x_solution_within_limit(temp_x_solution))):
+        if(not(self.check_x_solution_within_limit(temp_x_solution))):
             self.X = temp_x_solution
-            gauss_seidal(A,B)
+            self.gauss_seidal(A,B)
         self.X = temp_x_solution
          
