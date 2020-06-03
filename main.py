@@ -24,6 +24,8 @@ def main():
 
     initial_concentration = float(input("Enter the initial concentration \t"))
 
+    print('Starting Simulation ... \n')
+
     # Simulation start and functions
     simulation1 = simulation(number_elements,evolution_time,timesteps,tolerance,D,initial_concentration)
     print("Simulation parameters initialised")
@@ -34,6 +36,7 @@ def main():
     simulation1.generate_solution_of_equations()
     print("Concentration values at each grid point calculated")
 
+    print(simulation1.solution_matrix)
 
 if __name__ == "__main__":
     main()
