@@ -21,10 +21,9 @@ class simulation:
         self.X = np.zeros(self.nodes)
 
         # Initialize the solution matrix with zeros
-        self.solution_matrix = np.zeros((self.nodes,200))
+        self.solution_matrix = np.zeros((200,self.nodes))
 
         # Based on the initial condition
-        self.solution_matrix = self.solution_matrix.transpose()
         self.solution_matrix[0] = self.initial_concentration * np.ones(self.nodes)
 
     def generate_stiffness_matrix(self):
