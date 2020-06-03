@@ -89,4 +89,9 @@ class simulation:
             temp = self.solution_matrix[i - 1].transpose()
             B = self.M @ temp - self.dt * (self.K @ temp)
             self.solution_matrix[i] = self.gauss_seidal(self.M,B)
-         
+    # Print concentration values
+    def printsolnmatrix(self):       
+        for row in self.solution_matrix:
+              for val in row:
+                  print (val)
+              print
