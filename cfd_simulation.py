@@ -101,4 +101,5 @@ class simulation:
         plt.xlabel('Length x (units)')
         plt.ylabel('Concentration (%)')
         plt.legend(["interpolated","conc at nodes"])
+        plt.show()
     
