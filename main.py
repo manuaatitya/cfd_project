@@ -38,5 +38,7 @@ def main():
 
     print(simulation1.solution_matrix)
 
+    simulation1.plot_concentration()
+
 if __name__ == "__main__":
     main()
