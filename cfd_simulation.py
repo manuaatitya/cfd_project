@@ -93,12 +93,12 @@ class simulation:
     
     # Plot the values in a graph
     def plot_concentration(self):
-        x_axis = np.linspace(0,1,self.nodes)
-        plt.plot(x_axis,self.solution_matrix[5],label = "t =5")
-
-        plt.plot(x_axis,self.solution_matrix[50], label = "t = 50")
-
-        plt.plot(x_axis,self.solution_matrix[80], label = "t = 80")
-        plt.legend()
-        plt.show()
+           x_axis = np.linspace(0,1,self.nodes)
+        f = interp1d(x_axis, self.solution_matrix[5],kind= 'cubic')
+        xnew = np.linspace(0, 1, self.nodes * 5)
+        plt.plot(xnew, f(xnew))
+        plt.plot(x_axis,self.solution_matrix[5])
+        plt.xlabel('Length x (units)')
+        plt.ylabel('Concentration (%)')
+        plt.legend(["interpolated","conc at nodes"])
     
