@@ -1,5 +1,5 @@
 # CFD Assignment - Unsteady Diffusion 
-## Overleaf Link : [Project Report](https://www.overleaf.com/8678412517chmxmhhgxtrg)
+## Calculations: [Written Calculations](https://github.com/manuaatitya/cfd_project/blob/master/calculation.pdf)
 ### Contributors:
 - 111117058 Manu Aatitya R P
 - 111117094 Yogeesh S
