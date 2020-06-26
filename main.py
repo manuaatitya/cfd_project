@@ -11,7 +11,7 @@ from cfd_simulation import simulation
 # Main Driver Function for the application
 def main():
     # Get the number of elements input from the user
-    number_elements = int(input('Enter the number of nodes needed in the domain \t'))
+    number_elements = int(input('Enter the number of elements needed in the domain \t'))
     
     # Get the total time (seconds) input from the user
     evolution_time = int(input('Enter the time (s) required for the evolution simulation \t'))
