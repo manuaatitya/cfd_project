@@ -93,7 +93,7 @@ class simulation:
     
     # Plot the values in a graph
     def plot_concentration(self):
-           x_axis = np.linspace(0,1,self.nodes)
+        x_axis = np.linspace(0,1,self.nodes)
         f = interp1d(x_axis, self.solution_matrix[5],kind= 'cubic')
         xnew = np.linspace(0, 1, self.nodes * 5)
         plt.plot(xnew, f(xnew))
