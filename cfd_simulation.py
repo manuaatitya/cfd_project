@@ -17,9 +17,6 @@ class simulation:
         self.D = D
         self.initial_concentration = initial_concentration
 
-        # The initial guess for the solution is taken as all zeros
-        self.X = np.zeros(self.nodes)
-
         # Initialize the solution matrix with zeros
         self.solution_matrix = np.zeros((200,self.nodes))
 
@@ -67,26 +64,26 @@ class simulation:
     
     # Gauss Seidal Method to solve the system AX = B
     # X is the initial trial solution
-    def gauss_seidal(self,A,B):
-        temp_x_solution = np.zeros(self.nodes)
+    def gauss_seidal(self,A,B,X):
         for i in range(0,self.nodes):
+            # Temporary variable to store intermediate variables
             temp = B[i]
             for j in range(0,self.nodes):
                 if(i != j):
-                    temp -= A[i][j] * temp_x_solution[j]
+                    temp -= A[i][j] * X[j] # temp_x_solution[j]
             # Update value for the next iteration
-            temp_x_solution[i] = temp/A[i][i]
+            X[i] = temp/A[i][i]
 
-        if(not(self.check_x_solution_within_limit(temp_x_solution,self.prev_X))):
-            self.prev_X = temp_x_solution
-            self.gauss_seidal(A,B)
-        return temp_x_solution
+        if(not(self.check_x_solution_within_limit(X,self.prev_X))):
+            self.prev_X = X
+            self.gauss_seidal(A,B,X)
+        return X
 
     # Find the concentration at each grid point
     def generate_solution_of_equations(self):
         for i in range(1,200):
-            self.prev_X = np.zeros(self.nodes)
             temp = self.solution_matrix[i - 1].transpose()
             B = self.M @ temp - self.dt * (self.K @ temp)
-            self.solution_matrix[i] = self.gauss_seidal(self.M,B)
+            self.prev_X = np.zeros(self.nodes)
+            self.solution_matrix[i] = self.gauss_seidal(self.M,B,np.zeros(self.nodes))
     
