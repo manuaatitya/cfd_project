@@ -1,6 +1,7 @@
 #include the necessary headers
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
 
 # The simulation class
 class simulation:
