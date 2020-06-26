@@ -23,7 +23,7 @@ class simulation:
         # Initialize the solution matrix with zeros
         self.solution_matrix = np.zeros((200,self.nodes))
 
-        # Based on the initial condition
+        # Based on the start condition
         self.solution_matrix[0] = self.initial_concentration * np.ones(self.nodes)
 
     def generate_stiffness_matrix(self):
@@ -84,7 +84,7 @@ class simulation:
 
     # Find the concentration at each grid point
     def generate_solution_of_equations(self):
-        for i in range(1,self.nodes):
+        for i in range(1,200):
             self.prev_X = np.zeros(self.nodes)
             temp = self.solution_matrix[i - 1].transpose()
             B = self.M @ temp - self.dt * (self.K @ temp)
