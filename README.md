@@ -8,7 +8,7 @@
 - [main.py](https://github.com/manuaatitya/cfd_project/blob/master/main.py) Contains the main driver function for the simulation.
 - [cfd_simulation.py](https://github.com/manuaatitya/cfd_project/blob/master/cfd_simulation.py) Simulation class which contains all required function defintions used in the simulation. 
 ### Installation:
-This simulation code uses python and additional libraries (matplotlib and numpy) for plotting data.  
+This simulation code uses python and additional libraries (matplotlib, numpy, scipy) for plotting data.  
 To use the code install the following dependencies
 ```sh
 $ pip install numpy
