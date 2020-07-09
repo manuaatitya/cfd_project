@@ -13,6 +13,7 @@ To use the code install the following dependencies
 ```sh
 $ pip install numpy
 $ pip install matplotlib
+$ pip install scipy
 ```
 ### Usage:
 - Clone the repository and keep the source files in the same directory.
